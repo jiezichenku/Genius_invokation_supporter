@@ -1,8 +1,11 @@
-import cv2
 import numpy as np
 import pyautogui
 import time
+import pytesseract
 import os
+import easyocr
+from PIL import Image
+import cv2
 
 
 class Game_Screen:
@@ -25,8 +28,8 @@ class Game_Screen:
         # target = cv2.cvtColor(np.array(self.image), cv2.COLOR_RGB2BGR)
         # 遍历图片文件夹中的所有图片
         img = cv2.imread(graphic, 0)
-        target = cv2.imread(screen, 0)
-        return self.__compare_card(target, img, threshold, [])
+        self.image = cv2.imread(screen, 0)
+        return self.__compare_card(self.image, img, threshold, [])
 
     def __compare_card(self, target, img, threshold, ret):
         # 初始化FLANN匹配器
@@ -53,7 +56,6 @@ class Game_Screen:
         for match in good_matches:
             x, y = kp_target[match.trainIdx].pt
             locations.append((int(x), int(y)))
-            cv2.circle(target, (int(x), int(y)), 5, (0, 255, 0), -1)
 
         if len(good_matches) > 10:
             # 提取匹配点的坐标
@@ -73,10 +75,11 @@ class Game_Screen:
             # 将匹配到的卡牌涂白
             target_next = cv2.fillPoly(target, [np.int32(dst)], 255)
             ret.append(dst)
-            ret = self.__compare_card(target_next, img, t, ret)
+            ret = self.__compare_card(target_next, img, threshold, ret)
             return ret
 
         else:
+            pass
             # 显示带有标记的目标图像
             cv2.imshow('Target with Match', target)
             cv2.waitKey(0)
@@ -84,6 +87,64 @@ class Game_Screen:
 
         return ret
 
+    def check_screen_rect(self, screen, threshold1, threshold2):
+        # 读取图像
+        image = cv2.imread(screen, 0)  # 0表示以灰度图像方式读取
+        # 自适应阈值处理
+        adaptive_threshold = cv2.adaptiveThreshold(
+            image, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 20)
+        _, binary = cv2.threshold(adaptive_threshold, 0, 255, cv2.THRESH_BINARY)
+        # 显示结果
+        cv2.imshow('Adaptive Threshold', binary)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        # 轮廓提取
+        contours, _ = cv2.findContours(adaptive_threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+        # 筛选矩形区域
+        rectangles = []
+        for contour in contours:
+            # 近似多边形为矩形
+            epsilon = 0 * cv2.arcLength(contour, True)
+            approx = cv2.approxPolyDP(contour, epsilon, True)
+
+            # 筛选满足条件的矩形区域
+            if len(approx) == 4 and cv2.isContourConvex(approx):
+                rectangles.append(approx)
+
+        # 绘制矩形区域
+        for rect in rectangles:
+            x, y, w, h = cv2.boundingRect(rect)
+            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+        # 显示结果
+        cv2.imshow('Result', image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+    def recognize_numbers_in_rect(self, points, distance_threshold):
+        rect = cv2.boundingRect(points)
+        # 提取矩形坐标
+        x, y, w, h = rect
+
+        # 根据距离阈值计算角落的位置
+        top_left = [x - distance_threshold, y - distance_threshold]
+        bottom_right = [x + w + distance_threshold, y + h + distance_threshold]
+        # cv2.namedWindow("Window", cv2.WINDOW_AUTOSIZE)
+        # cv2.imshow('Window', self.image)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+        # 提取矩形区域
+        roi = self.image[top_left[1]:bottom_right[1], top_left[0]:bottom_right[0]]
+        # cv2.imshow('Target with Match', roi)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+
+        # 对图像进行文本识别
+        pil_image = Image.fromarray(roi)
+        reader = easyocr.Reader(['en'])
+        results = reader.readtext(pil_image)
+        return results
 
 if __name__ == '__main__':
     screen_reader = Game_Screen()
@@ -91,11 +152,16 @@ if __name__ == '__main__':
     # time.sleep(1)
     screen = "E:\GitHub\GenshinCard\Graphic\Game\\test.png"
     path = "E:\GitHub\GenshinCard\Graphic\Support\Liyue_Harbor_Wharf.png"
-    t = 0.5
-    ret = screen_reader.check_card_exist(screen, path, t)
-    print("threshold: %s, card_num: %s" % (t, ret))
-    # for i in range(9):
-    #     t = 0.1 * i
-    #     ret = screen_reader.check_card_exist(screen, path, t)
-    #     print("threshold: %s, card_num: %s" % (t, len(ret)))
+
+    # for i in [1]:
+    #     t1 = i*0.1
+    #     t2 = i*0.2
+    #     screen_reader.check_screen_rect(screen, t1, t2)
+    #     print("threshold: %s+%s" % (t1, t2))
+    for i in [5]:
+        t = 0.1 * i
+        ret = screen_reader.check_card_exist(screen, path, t)
+        ret = screen_reader.recognize_numbers_in_rect(ret[0], 5)
+        print("threshold: %s, card_num: %s" % (t, ret))
+
 
