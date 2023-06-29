@@ -20,9 +20,9 @@ class MainWindow(QWidget):
         button_layout = QHBoxLayout()
 
         # 创建三个按钮
-        button1 = QPushButton("Button 1", self)
-        button2 = QPushButton("Button 2", self)
-        button3 = QPushButton("Button 3", self)
+        button1 = QPushButton("我方牌库", self)
+        button2 = QPushButton("我方已打出", self)
+        button3 = QPushButton("对方已打出", self)
 
         # 连接按钮点击事件到槽函数
         button1.clicked.connect(self.showGroup1)

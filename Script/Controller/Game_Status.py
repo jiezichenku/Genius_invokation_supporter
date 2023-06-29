@@ -19,3 +19,6 @@ class Game_Status:
                 status_changed = True
         if not status_changed:
             self.status = "init"
+
+    def add_card_deck(self):
+        card_deck = []
