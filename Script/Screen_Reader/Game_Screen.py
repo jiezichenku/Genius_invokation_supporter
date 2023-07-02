@@ -65,14 +65,32 @@ class Game_Screen:
         self.image = resized_image
 
     def check_card_exist(self, card, threshold):
-        # 图片文件夹路径和游戏画面截图路径
-        graphic = card  # 卡牌图片文件夹路径
-        # 遍历图片文件夹中的所有图片
+        # 读取卡牌和屏幕
+        graphic = card
         img = cv2.imread(graphic)
         screen = self.image.copy()
+        # 转换为灰度图
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
         return self.__compare_card(screen, img, threshold, [])
+
+    def check_card(self, card, size, threshold):
+        # 读取卡牌和屏幕
+        graphic = card
+        img = cv2.imread(graphic)
+        screen = self.image.copy()
+        # 转换为灰度图
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
+        # 调整卡牌大小
+        # card_height = img.shape[0]
+        card_width = img.shape[1]
+        new_height = card_width / size[1] * size[0]
+        cut_image = img[0:int(new_height), :]
+        resized_image = cv2.resize(cut_image, (size[1], size[0]))
+        result = self.template_compare(screen, resized_image, threshold)
+        return result
+        # return self.__compare_card(screen, img, threshold, [])
 
     def __compare_card(self, target, img, threshold, ret):
         # 初始化FLANN匹配器
@@ -131,57 +149,38 @@ class Game_Screen:
             return ret
         return ret
 
-    def template_compare(self, target, img, threshold):
-        # 将图片切换为灰度图像
-        target = cv2.cvtColor(target, cv2.COLOR_BGR2GRAY)
-
+    def template_compare(self, target, img, t):
         # 使用模板匹配方法 TM_CCOEFF_NORMED
-        res = cv2.matchTemplate(img, target, cv2.TM_CCOEFF_NORMED)
+        result = cv2.matchTemplate(target, img, cv2.TM_CCOEFF_NORMED)
+        _, max_val, _, max_loc = cv2.minMaxLoc(result)
 
-        # 使用np.where函数检测匹配程度超过阈值的位置
-        locations = np.where(res >= threshold)
-        return locations
+        # 获取模板的宽度和高度
+        template_height, template_width = img.shape[:2]
 
-    def check_screen_rect(self, screen, threshold1, threshold2):
-        # 读取图像
-        image = cv2.imread(screen, 0)  # 0表示以灰度图像方式读取
-        # 自适应阈值处理
-        adaptive_threshold = cv2.adaptiveThreshold(
-            image, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 20)
-        _, binary = cv2.threshold(adaptive_threshold, 0, 255, cv2.THRESH_BINARY)
-        # 轮廓提取
-        contours, _ = cv2.findContours(adaptive_threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-        # 筛选矩形区域
-        rectangles = []
-        for contour in contours:
-            # 近似多边形为矩形
-            epsilon = 0 * cv2.arcLength(contour, True)
-            approx = cv2.approxPolyDP(contour, epsilon, True)
-
-            # 筛选满足条件的矩形区域
-            if len(approx) == 4 and cv2.isContourConvex(approx):
-                rectangles.append(approx)
-
-        # 绘制矩形区域
-        for rect in rectangles:
-            x, y, w, h = cv2.boundingRect(rect)
-            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        # 如果匹配值大于阈值，认为匹配成功
+        threshold = t
+        if max_val >= threshold:
+            # 计算匹配区域的四角坐标
+            top_left = max_loc
+            bottom_right = (top_left[0] + template_width, top_left[1] + template_height)
+            return top_left[0], top_left[1], bottom_right[0], bottom_right[1]
+        else:
+            return None
 
     def recognize_numbers_in_rect(self, points):
-        rect = cv2.boundingRect(points)
         # 提取矩形坐标
-        x, y, w, h = rect
+        x, y, z, w = points
         # 提取矩形区域
-        roi = self.image[y:y + h, x:x + w]
+        roi = self.image[w-30:w, z-30:z]
+        roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
         # 对图像进行文本识别
         deck_num_1 = cv2.imread("../../Graphic/template/deck_num_1.png", 0)
         deck_num_2 = cv2.imread("../../Graphic/template/deck_num_2.png", 0)
         result_1 = self.template_compare(roi, deck_num_1, 0.7)
-        if len(result_1[0]) > 0:
+        if result_1:
             return 1
         result_2 = self.template_compare(roi, deck_num_2, 0.7)
-        if len(result_2[0]) > 0:
+        if result_2:
             return 2
         return 0
 
@@ -197,25 +196,6 @@ if __name__ == '__main__':
     screen_reader = Game_Screen()
     screen_reader.get_game_screenshot()
     screen_reader.resize_screen_deck()
-    # time.sleep(1)
-    # screen = "E:\GitHub\GenshinCard\Graphic\Game\\deck_card.png"
-    # screen_reader.image = cv2.imread(screen, 0)
-    root = "E:\GitHub\Genius_invoke\Graphic"
-    path = ["Support", "Equipment", "Event", "Gift"]
-
-    # for i in [1]:
-    #     t1 = i*0.1
-    #     t2 = i*0.2
-    #     screen_reader.check_screen_rect(screen, t1, t2)
-    #     print("threshold: %s+%s" % (t1, t2))
-    deck = {}
-    t = 0.5
-    for p in path:
-        for card in all_card(os.path.join(root, p)):
-            print(card)
-            ret = screen_reader.check_card_exist(card, t)
-            if len(ret) > 0:
-                num = screen_reader.recognize_numbers_in_rect(ret[0])
-                if num > 0:
-                    deck[card.split("\\")[-1]] = num
-    print(deck)
+    path = "..\..\Graphic\Support\Liben.png"
+    ret = screen_reader.check_card(path, (150, 90), 0.5)
+    print(ret)
