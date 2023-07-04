@@ -15,15 +15,16 @@ class Game_Screen:
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    def get_game_screenshot(self):
+    def get_game_screenshot(self, region=None):
         game_window_title = "原神"
         game_window = pyautogui.getWindowsWithTitle(game_window_title)[0]
         # 图片分辨率处理
         if game_window is not None:
             game_window.activate()
             time.sleep(1)
-            screenshot = pyautogui.screenshot(region=(game_window.left, game_window.top,
-                                                      game_window.width, game_window.height))
+            if region is None:
+                region = (game_window.left, game_window.top, game_window.width, game_window.height)
+            screenshot = pyautogui.screenshot(region=region)
             self.image = np.array(screenshot)
 
     def resize_screen_gaming(self):
@@ -183,6 +184,23 @@ class Game_Screen:
         if result_2:
             return 2
         return 0
+
+    def detect_change(self, previous_frame, current_frame, threshold=30):
+        # 将图像转换为灰度图
+        previous_gray = cv2.cvtColor(previous_frame, cv2.COLOR_BGR2GRAY)
+        current_gray = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
+
+        # 计算帧间差分的绝对值
+        frame_diff = cv2.absdiff(previous_gray, current_gray)
+
+        # 计算像素级别的变化总和
+        diff_sum = np.sum(frame_diff)
+
+        # 检查是否超过阈值
+        if diff_sum > threshold:
+            return True
+        else:
+            return False
 
 
 def all_card(card_path):
