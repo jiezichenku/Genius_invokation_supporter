@@ -15,21 +15,19 @@ class Game_Screen:
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    def get_game_screenshot(self, region=None):
+    def get_game_screenshot(self):
         game_window_title = "原神"
         game_window = pyautogui.getWindowsWithTitle(game_window_title)[0]
         # 图片分辨率处理
         if game_window is not None:
             game_window.activate()
-            time.sleep(1)
-            if region is None:
-                region = (game_window.left, game_window.top, game_window.width, game_window.height)
+            # time.sleep(1)
+            region = (game_window.left, game_window.top, game_window.width, game_window.height)
             screenshot = pyautogui.screenshot(region=region)
             self.image = np.array(screenshot)
 
     def resize_screen_gaming(self):
         # 将屏幕适配为16:9，不为16:9的上下裁去等量宽度改为16:9
-
         # 获取原始图像的宽度和高度
         height = self.image.shape[0]
         width = self.image.shape[1]
@@ -47,7 +45,7 @@ class Game_Screen:
 
             # 上下裁剪相等的宽度
             cropped_image = self.image[crop_start:crop_end, :]
-            self.show_img(cropped_image)
+            # self.show_img(cropped_image)
 
             # 缩放为目标尺寸
             resized_image = cv2.resize(cropped_image, (self.image_size[0], self.image_size[1]))
@@ -75,7 +73,7 @@ class Game_Screen:
         screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
         return self.__compare_card(screen, img, threshold, [])
 
-    def check_card(self, card, size, threshold):
+    def check_card(self, card, size, threshold, region=None):
         # 读取卡牌和屏幕
         graphic = card
         img = cv2.imread(graphic)
@@ -83,6 +81,8 @@ class Game_Screen:
         # 转换为灰度图
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
+        if region:
+            screen = screen[region[0]:region[1], region[2]:region[3]]
         # 调整卡牌大小
         # card_height = img.shape[0]
         card_width = img.shape[1]
@@ -186,19 +186,14 @@ class Game_Screen:
         return 0
 
     def detect_change(self, previous_frame, current_frame, threshold=30):
-        # 将图像转换为灰度图
-        previous_gray = cv2.cvtColor(previous_frame, cv2.COLOR_BGR2GRAY)
-        current_gray = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
-
         # 计算帧间差分的绝对值
-        frame_diff = cv2.absdiff(previous_gray, current_gray)
+        frame_diff = cv2.absdiff(previous_frame, current_frame)
 
         # 计算像素级别的变化总和
         diff_sum = np.sum(frame_diff)
-
         # 检查是否超过阈值
         if diff_sum > threshold:
-            return True
+            return diff_sum
         else:
             return False
 

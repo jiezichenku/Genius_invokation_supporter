@@ -1,5 +1,5 @@
 import json
-from Card import Card
+from Script.Game_Model.Card import Card
 Card_Info_Json = "../../Data/Card/Card_Info.json"
 Card_Usage_Json = "../../Data/Card/Card_Usage.json"
 
