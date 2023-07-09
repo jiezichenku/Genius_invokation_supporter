@@ -19,6 +19,7 @@ class Game_Status:
         self.enemy_card = []
         self.my_card = []
         self.enemy_card_loc = (175, 175 + 376, 1190, 1190 + 216)
+        self.game_status_bar = (600, 1000, 440, 490)
         self.my_card_loc = ()
         self.enemy_card_img = None
         self.my_card_img = None
@@ -45,7 +46,7 @@ class Game_Status:
         print("card_read: %s" % len(card_deck.keys()))
         return card_deck
 
-    def listen_game_screen(self, card_list, card_loc):
+    def listen_game_screen(self, card_loc):
         # 读取初始帧
         self.game_screen.get_game_screenshot()
         self.game_screen.resize_screen_gaming()
