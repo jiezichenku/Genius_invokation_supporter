@@ -1,92 +1,97 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel
-from PyQt5.QtGui import QPixmap
+import cv2
+import os
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout, QPushButton, QStackedLayout, QLabel
 
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.hide_list = []
+        self.card_list = []
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("Image Viewer")
-        self.setGeometry(100, 100, 256, 768)
+        self.setWindowTitle("Main Window")
+        self.setFixedSize(300, 800)
+        self.top_img("image.png")
 
-        # 创建垂直布局
-        layout = QVBoxLayout()
-        self.setLayout(layout)
+        # 创建按钮和栈布局
+        button1 = QPushButton("Page 1")
+        button2 = QPushButton("Page 2")
+        button3 = QPushButton("Page 3")
+        button_restore = QPushButton("恢复")
+
+        self.stackedLayout = QStackedLayout()
+        self.stackedLayout.addWidget(self.createPage(1, self.card_list))
+        # self.stackedLayout.addWidget(self.createPage(2))
+        # self.stackedLayout.addWidget(self.createPage(3))
 
         # 创建按钮布局
-        button_layout = QHBoxLayout()
+        buttonLayout_top = QHBoxLayout()
+        buttonLayout_top.addWidget(button1)
+        buttonLayout_top.addWidget(button2)
+        buttonLayout_top.addWidget(button3)
 
-        # 创建三个按钮
-        button1 = QPushButton("我方牌库", self)
-        button2 = QPushButton("我方已打出", self)
-        button3 = QPushButton("对方已打出", self)
+        buttonLayout_bottom = QHBoxLayout()
+        buttonLayout_bottom.addWidget(button_restore)
+        # 创建主布局，并将上面的控件添加到主布局中
+        mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.label)
+        mainLayout.addLayout(buttonLayout_top)
+        mainLayout.addLayout(self.stackedLayout)
+        mainLayout.addLayout(buttonLayout_bottom)
 
-        # 连接按钮点击事件到槽函数
-        button1.clicked.connect(self.showGroup1)
-        button2.clicked.connect(self.showGroup2)
-        button3.clicked.connect(self.showGroup3)
+        self.setLayout(mainLayout)
 
-        # 将按钮添加到按钮布局
-        button_layout.addWidget(button1)
-        button_layout.addWidget(button2)
-        button_layout.addWidget(button3)
+        # 连接按钮的点击事件，切换栈布局页面
+        button1.clicked.connect(lambda: self.stackedLayout.setCurrentIndex(0))
+        button2.clicked.connect(lambda: self.stackedLayout.setCurrentIndex(1))
+        button3.clicked.connect(lambda: self.stackedLayout.setCurrentIndex(2))
+        button_restore.clicked.connect(self.restoreButton)
 
-        # 创建视图布局
-        view_layout = QVBoxLayout()
+    def top_img(self, img):
+        # 创建顶部的图片
+        pixmap = QPixmap(img).scaled(200, 100)
+        self.label = QLabel(self)
+        self.label.setPixmap(pixmap)
+        self.label.setAlignment(Qt.AlignHCenter)
 
-        # 创建并添加图片 QLabel
-        for i in range(1):  # 假设有5张图片
-            image_label = QLabel()
-            image_label.setFixedSize(256, 64)
-            # 设置图片路径
-            image_path = "E:\GitHub\GenshinCard\Graphic\Support\Liyue_Harbor_Wharf.png"  # 假设图片路径为 image0.png, image1.png, ...
-            pixmap = QPixmap(image_path)
-            image_label.setPixmap(pixmap)
-            view_layout.addWidget(image_label)
+    def createPage(self, pageNum, card_list):
+        # 读取卡牌图片
+        cards_show_url = "../../Graphic/Cards_Show"
+        cards_show = os.listdir(cards_show_url)
+        # 创建按钮控件
+        pageWidget = QWidget()
+        layout = QVBoxLayout(pageWidget)
+        layout.setSpacing(0)
+        layout.setContentsMargins(0, 0, 0, 0)
 
-        # 将按钮布局和视图布局添加到垂直布局
-        layout.addLayout(button_layout)
-        layout.addLayout(view_layout)
+        for i in range(18):
+            url = "%s/%s" % (cards_show_url, cards_show[i + 18 * pageNum])
+            img = QImage(url)
+            width = 280
+            height = int(width / img.width() * img.height())
+            button = QPushButton()
+            button.setFixedSize(width, height)
+            layout.addWidget(button)
+            layout.setAlignment(Qt.AlignHCenter)
+            button.setStyleSheet("border-image:url(%s)" % url)
+            button.clicked.connect(self.onButtonClick)
 
-    def showGroup1(self):
-        self.clearViewLayout()
-        for i in range(3):
-            image_label = QLabel()
-            image_label.setFixedSize(256, 64)
-            image_path = f"group1_image{i}.png"
-            pixmap = QPixmap(image_path)
-            image_label.setPixmap(pixmap)
-            self.view_layout.addWidget(image_label)
+        return pageWidget
 
-    def showGroup2(self):
-        self.clearViewLayout()
-        for i in range(4):
-            image_label = QLabel()
-            image_label.setFixedSize(256, 64)
-            image_path = f"group2_image{i}.png"
-            pixmap = QPixmap(image_path)
-            image_label.setPixmap(pixmap)
-            self.view_layout.addWidget(image_label)
+    def onButtonClick(self):
+        button = self.sender()  # 获取触发信号的按钮
+        button.hide()  # 隐藏按钮
+        self.hide_list.append(button)
 
-    def showGroup3(self):
-        self.clearViewLayout()
-        for i in range(2):
-            image_label = QLabel()
-            image_label.setFixedSize(256, 64)
-            image_path = f"group3_image{i}.png"
-            pixmap = QPixmap(image_path)
-            image_label.setPixmap(pixmap)
-            self.view_layout.addWidget(image_label)
+    def restoreButton(self):
+        button = self.hide_list.pop()
+        button.show()
 
-    def clearViewLayout(self):
-        while self.view_layout.count() > 0:
-            item = self.view_layout.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -4,7 +4,9 @@ import time
 
 import cv2
 from Script.Screen_Reader.Game_Screen import Game_Screen
+from Script.Screen_Reader.Image_Recognize import Image_Recognize
 from Script.Game_Model.Card_Factory import Card_Factory
+
 
 class Game_Status:
     def __init__(self):
@@ -13,6 +15,7 @@ class Game_Status:
         self.graphic_root = "..\..\Graphic"
         self.graphic_folder = ["Support", "Equipment", "Event", "Gift"]
         self.game_screen = Game_Screen()
+        self.image_recognize = Image_Recognize()
         self.card_factory = Card_Factory()
         self.card_factory.read_card()
         self.card_list = []
@@ -34,16 +37,12 @@ class Game_Status:
         card_deck = {}
         card_location = {}
         for card in self.card_list:
-            print(card)
-            ret = self.game_screen.check_card(card, [150, 90], 0.5)
-            print(ret)
+            ret = self.image_recognize.check_card(self.game_screen.image, card, [150, 90], 0.5)
             if ret:
-                num = self.game_screen.recognize_numbers_in_rect(ret)
+                num = self.image_recognize.recognize_numbers_in_rect(self.game_screen.image, ret)
                 if num > 0:
                     card_deck[card.split("\\")[-1]] = num
                     card_location[card.split("\\")[-1]] = ret
-        print(card_deck)
-        print("card_read: %s" % len(card_deck.keys()))
         return card_deck
 
     def listen_game_screen(self, card_loc):
@@ -51,29 +50,28 @@ class Game_Status:
         self.game_screen.get_game_screenshot()
         self.game_screen.resize_screen_gaming()
         previous_frame = self.game_screen.image.copy()
-        previous_frame = cv2.cvtColor(previous_frame, cv2.COLOR_BGR2GRAY)
+        # previous_frame = cv2.cvtColor(previous_frame, cv2.COLOR_BGR2GRAY)
         previous_frame = previous_frame[card_loc[0]:card_loc[1], card_loc[2]:card_loc[3]]
         cards_img = []
         diff_sums = []
+        card_list = []
         while True:
             # 读取当前帧
             self.game_screen.get_game_screenshot()
             self.game_screen.resize_screen_gaming()
             current_frame = self.game_screen.image.copy()
-            current_frame = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
+            # current_frame = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
             current_frame = current_frame[card_loc[0]:card_loc[1], card_loc[2]:card_loc[3]]
             # 检测画面是否发生较大的变化
-            diff_sum = self.game_screen.detect_change(previous_frame, current_frame, threshold=1000000)
+            diff_sum = self.image_recognize.detect_change(previous_frame, current_frame, threshold=1000000)
             if diff_sum is not False:
-                print(diff_sum)
                 cards_img.append(current_frame)
                 diff_sums.append(diff_sum)
-                # for card in self.card_list:
-                #     ret = self.game_screen.check_card(card, [376, 216], 0.9, card_loc)
-                #     if ret:
-                #         card_list.append(card)
-                #         print(card)
-                #         break
+                for card in self.card_list:
+                    ret = self.game_screen.image_recognize.check_card(current_frame, card, 0.9)
+                    if ret:
+                        card_list.append(card)
+                        break
             if len(cards_img) > 100:
                 break
             previous_frame = current_frame
@@ -83,5 +81,5 @@ class Game_Status:
 
 if __name__ == '__main__':
     status = Game_Status()
-    status.listen_game_screen(status.enemy_card, status.enemy_card_loc)
+    status.listen_game_screen(status.enemy_card_loc)
     # status.add_card_deck()

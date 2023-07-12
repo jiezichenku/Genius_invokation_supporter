@@ -163,7 +163,7 @@
   {
     "id": 24,
     "en": "Featherfall_Judgment",
-    "ch": "落羽的裁泽",
+    "ch": "落羽的裁择",
     "full_img": "",
     "show_img": ""
   },
@@ -604,7 +604,7 @@
   {
     "id": 82,
     "en": "Broken_Rimes_Echo",
-    "ch": "踏破冰雪的回音",
+    "ch": "破冰踏雪的回音",
     "full_img": "",
     "show_img": ""
   },
@@ -772,7 +772,7 @@
   {
     "id": 106,
     "en": "Vanarana",
-    "ch": "桓纳兰那",
+    "ch": "桓那兰那",
     "full_img": "",
     "show_img": ""
   },
@@ -954,7 +954,7 @@
   {
     "id": 132,
     "en": "Smoothing_Water",
-    "ch": "元素共鸣：疗愈之水",
+    "ch": "元素共鸣：愈疗之水",
     "full_img": "",
     "show_img": ""
   },
@@ -1066,7 +1066,7 @@
   {
     "id": 148,
     "en": "The_Best_Travel_Companion",
-    "ch": "最好的伙伴",
+    "ch": "最好的伙伴！",
     "full_img": "",
     "show_img": ""
   },
@@ -1094,14 +1094,14 @@
   {
     "id": 152,
     "en": "I_Havent_Lost_Yet",
-    "ch": "本大爷还没有输",
+    "ch": "本大爷还没有输！",
     "full_img": "",
     "show_img": ""
   },
   {
     "id": 153,
     "en": "Leave_it_to_Me",
-    "ch": "交给我吧",
+    "ch": "交给我吧！",
     "full_img": "",
     "show_img": ""
   },

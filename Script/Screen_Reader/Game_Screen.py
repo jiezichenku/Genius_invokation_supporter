@@ -1,8 +1,6 @@
-import os
 import numpy as np
 import pyautogui
-import time
-from Image_Recognize import Image_Recognize
+from Script.Screen_Reader.Image_Recognize import Image_Recognize
 
 
 class Game_Screen:
@@ -66,62 +64,3 @@ class Game_Screen:
         screen = self.image.copy()
         screen = screen[region[0]:region[1], region[2]:region[3]]
         return screen
-
-    def check_card(self, card, size, threshold, region=None):
-        # 读取卡牌和屏幕
-        graphic = card
-        img = cv2.imread(graphic)
-        screen = self.image.copy()
-        # 转换为灰度图
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        if region:
-            screen = screen[region[0]:region[1], region[2]:region[3]]
-        # 调整卡牌大小
-        # card_height = img.shape[0]
-        card_width = img.shape[1]
-        new_height = card_width / size[1] * size[0]
-        cut_image = img[0:int(new_height), :]
-        resized_image = cv2.resize(cut_image, (size[1], size[0]))
-        result = self.template_compare(screen, resized_image, threshold)
-        return result
-        # return self.__compare_card(screen, img, threshold, [])
-
-
-
-    def recognize_numbers_in_rect(self, points):
-        # 提取矩形坐标
-        x, y, z, w = points
-        # 提取矩形区域
-        roi = self.image[w-30:w, z-30:z]
-        roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        # 对图像进行文本识别
-        deck_num_1 = cv2.imread("../../Graphic/template/deck_num_1.png", 0)
-        deck_num_2 = cv2.imread("../../Graphic/template/deck_num_2.png", 0)
-        result_1 = self.template_compare(roi, deck_num_1, 0.7)
-        if result_1:
-            return 1
-        result_2 = self.template_compare(roi, deck_num_2, 0.7)
-        if result_2:
-            return 2
-        return 0
-
-    def detect_change(self, previous_frame, current_frame, threshold=30):
-        # 计算帧间差分的绝对值
-        frame_diff = cv2.absdiff(previous_frame, current_frame)
-
-        # 计算像素级别的变化总和
-        diff_sum = np.sum(frame_diff)
-        # 检查是否超过阈值
-        if diff_sum > threshold:
-            return diff_sum
-        else:
-            return False
-
-
-if __name__ == '__main__':
-    screen_reader = Game_Screen()
-    screen_reader.get_game_screenshot()
-    screen_reader.resize_screen_deck()
-    path = "..\..\Graphic\Support\Liben.png"
-    ret = screen_reader.check_card(path, (150, 90), 0.5)
-    print(ret)

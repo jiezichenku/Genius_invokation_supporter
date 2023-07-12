@@ -8,6 +8,7 @@ class Card_Factory:
     def __init__(self):
         self.cards_by_id = []
         self.cards_by_usage = []
+        self.read_card()
 
     def cards_by_id(self):
         return self.cards_by_id
@@ -31,7 +32,6 @@ class Card_Factory:
                             card_info["full_img"],
                             card_info["show_img"])
                 self.cards_by_id.append(card)
-        print(len(self.cards_by_id))
 
         with open(Card_Usage_Json, encoding='utf-8') as file:
             data = json.load(file)
