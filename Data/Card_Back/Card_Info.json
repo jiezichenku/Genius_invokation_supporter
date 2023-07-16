@@ -1,0 +1,1290 @@
+[
+  {
+    "id": 1,
+    "en": "Undivided_Heart",
+    "ch": "唯此一心",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 2,
+    "en": "Shaken_Not_Purred",
+    "ch": "猫爪冰摇",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 3,
+    "en": "Cold_Blooded_Strike",
+    "ch": "冷血之剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 4,
+    "en": "Steady_Breathing",
+    "ch": "吐纳真定",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 5,
+    "en": "Kanten_Senmyou_Blessing",
+    "ch": "寒天宣命祝词",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 6,
+    "en": "Wellspring_of_War_Lust",
+    "ch": "战欲涌现",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 7,
+    "en": "Mystical_Abandon",
+    "ch": "忘玄",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 8,
+    "en": "Glorious_Season",
+    "ch": "光辉的季节",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 9,
+    "en": "The_Scent_Remained",
+    "ch": "重帘留香",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 10,
+    "en": "Prophecy_of_Submersion",
+    "ch": "沉没的预言",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 11,
+    "en": "Abyssal_Mayhem_Hydrospout",
+    "ch": "深渊之灾·凝水盛放",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 12,
+    "en": "Tamkushi_Casket",
+    "ch": "匣中玉栉",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 13,
+    "en": "Kyouka_Fuushi",
+    "ch": "镜华风姿",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 14,
+    "en": "Flowing_Flame",
+    "ch": "流火焦灼",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 15,
+    "en": "Crossfire",
+    "ch": "交叉火力",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 16,
+    "en": "Grand_Expectation",
+    "ch": "冒险憧憬",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 17,
+    "en": "Bunny_Triggered",
+    "ch": "一触即发",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 18,
+    "en": "Naganohara_Meteor_Swarm",
+    "ch": "长野原龙势流星群",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 19,
+    "en": "Pounding_Surprise",
+    "ch": "砰砰礼物",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 20,
+    "en": "Sanguine_Rouge",
+    "ch": "血之灶火",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 21,
+    "en": "Stellar_Predator",
+    "ch": "噬星魔鸦",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 22,
+    "en": "Awakening",
+    "ch": "觉醒",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 23,
+    "en": "Thundering_Penance",
+    "ch": "抵天雷罚",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 24,
+    "en": "Featherfall_Judgment",
+    "ch": "落羽的裁择",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 25,
+    "en": "Lightning_Storm",
+    "ch": "霹雳连霄",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 26,
+    "en": "Sin_of_Pride",
+    "ch": "我界",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 27,
+    "en": "Wishes_Unnumbered",
+    "ch": "万千的愿望",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 28,
+    "en": "The_Shrines_Sacred_Shade",
+    "ch": "神篱之御荫",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 29,
+    "en": "Chaotic_Entropy",
+    "ch": "混元熵增论",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 30,
+    "en": "Lands_of_Dandelion",
+    "ch": "蒲公英的国土",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 31,
+    "en": "Embrace_of_Winds",
+    "ch": "绪风之拥",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 32,
+    "en": "Conqueror_of_Evil_Guardian_Yaksha",
+    "ch": "降魔·护法夜叉",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 33,
+    "en": "Strategic_Reserve",
+    "ch": "储之千日，用之一刻",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 34,
+    "en": "I_Got_Your_Back",
+    "ch": "支援就交给我吧",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 35,
+    "en": "Dominance_of_Earth",
+    "ch": "炊金馔玉",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 36,
+    "en": "Arataki_Ichiban",
+    "ch": "荒泷第一",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 37,
+    "en": "Floral_Sidewinder",
+    "ch": "飞叶迴斜",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 38,
+    "en": "Keen_Sight",
+    "ch": "眼识殊明",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 39,
+    "en": "The_Seed_of_Stored_Knowledge",
+    "ch": "心识蕴藏之种",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 40,
+    "en": "Cicins_Cold_Glare",
+    "ch": "冰萤寒光",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 41,
+    "en": "Streaming_Surge",
+    "ch": "百川奔流",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 42,
+    "en": "Mirror_Cage",
+    "ch": "镜锢之笼",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 43,
+    "en": "Paid_in_Full",
+    "ch": "悉数讨回",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 44,
+    "en": "Embers_Rekindled",
+    "ch": "烬火重燃",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 45,
+    "en": "Absorbing_Prism",
+    "ch": "汲能棱晶",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 46,
+    "en": "Transcendent_Automaton",
+    "ch": "机巧神通",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 47,
+    "en": "Stonehide_Reforged",
+    "ch": "重铸：岩盔",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 48,
+    "en": "Proliferating_Spores",
+    "ch": "孢子增殖",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 49,
+    "en": "Magic_Guide",
+    "ch": "魔导绪论",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 50,
+    "en": "Sacrificial_Fragments",
+    "ch": "祭礼残章",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 51,
+    "en": "Skyward_Atlas",
+    "ch": "天空之卷",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 52,
+    "en": "A_Thousand_Floating_Dreams",
+    "ch": "千夜浮梦",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 53,
+    "en": "Raven_Bow",
+    "ch": "鸦羽弓",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 54,
+    "en": "Sacrificial_Bow",
+    "ch": "祭礼弓",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 55,
+    "en": "Skyward_Harp",
+    "ch": "天空之翼",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 56,
+    "en": "Amos_Bow",
+    "ch": "阿莫斯之弓",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 57,
+    "en": "Elgey_for_the_End",
+    "ch": "终末嗟叹之诗",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 58,
+    "en": "White_Iron_Greatsword",
+    "ch": "白铁大剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 59,
+    "en": "Sacrificial_Greatsword",
+    "ch": "祭礼大剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 60,
+    "en": "Wolfs_Gravestone",
+    "ch": "狼的末路",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 61,
+    "en": "Skyward_Pride",
+    "ch": "天空之傲",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 62,
+    "en": "The_Bell",
+    "ch": "钟剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 63,
+    "en": "White_Tassel",
+    "ch": "白缨枪",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 64,
+    "en": "Lithic_Spear",
+    "ch": "千岩长枪",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 65,
+    "en": "Skyward_Spine",
+    "ch": "天空之脊",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 66,
+    "en": "Vortex_Vanquisher",
+    "ch": "贯虹之槊",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 67,
+    "en": "Engulfing_Lightning",
+    "ch": "薙草之稻光",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 68,
+    "en": "Travelers_Handy_Sword",
+    "ch": "旅行剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 69,
+    "en": "Sacrificial_Sword",
+    "ch": "祭礼剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 70,
+    "en": "Aquila_Favonia",
+    "ch": "风鹰剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 71,
+    "en": "Skyward_Blade",
+    "ch": "天空之刃",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 72,
+    "en": "Favonius_Sword",
+    "ch": "西风剑",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 73,
+    "en": "Advanturers_Bandana",
+    "ch": "冒险家头带",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 74,
+    "en": "Lucky_Dogs_Silver_Circlet",
+    "ch": "幸运儿银冠",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 75,
+    "en": "Traveling_Doctors_Handkerchief",
+    "ch": "游医的方巾",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 76,
+    "en": "Gamblers_Earrings",
+    "ch": "赌徒的耳环",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 77,
+    "en": "Instructors_Cap",
+    "ch": "教官的帽子",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 73,
+    "en": "Exiles_Circlet",
+    "ch": "流放者头冠",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 74,
+    "en": "Ornate_Kabuto",
+    "ch": "华饰之兜",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 75,
+    "en": "Emblem_of_Severed_Fate",
+    "ch": "绝缘之旗印",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 76,
+    "en": "Generals_Ancient_Helm",
+    "ch": "将帅兜鍪",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 77,
+    "en": "Tenacity_of_the_Millelith",
+    "ch": "千岩牢固",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 78,
+    "en": "Thundering_Poise",
+    "ch": "虺雷之姿",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 79,
+    "en": "Vermillion_Hereafter",
+    "ch": "辰砂往生录",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 80,
+    "en": "Capricious_Visage",
+    "ch": "无常之面",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 81,
+    "en": "Shimenawas_Reminiscence",
+    "ch": "追忆之注连",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 82,
+    "en": "Broken_Rimes_Echo",
+    "ch": "破冰踏雪的回音",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 83,
+    "en": "Blizzard_Strayer",
+    "ch": "冰风迷途的勇士",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 84,
+    "en": "Wine_Stained_Tricorne",
+    "ch": "酒渍船帽",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 85,
+    "en": "Heart_of_Depth",
+    "ch": "沉沦之心",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 86,
+    "en": "Witchs_Scorching_Hat",
+    "ch": "焦灼的魔女帽",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 87,
+    "en": "Crimson_Witch_of_Flames",
+    "ch": "炽烈的炎之魔女",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 88,
+    "en": "Thunder_Summoners_Crown",
+    "ch": "唤雷的头冠",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 89,
+    "en": "Thundering_Fury",
+    "ch": "如雷的盛怒",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 90,
+    "en": "Viridescent_Venerers_Diadem",
+    "ch": "翠绿的猎人之冠",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 91,
+    "en": "Viridescent_Venerer",
+    "ch": "翠绿之影",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 92,
+    "en": "Mask_of_Solitude_Basalt",
+    "ch": "不动玄石之相",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 93,
+    "en": "Archaic_Petra",
+    "ch": "悠古的磐岩",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 94,
+    "en": "Laurel_Coronet",
+    "ch": "月桂的宝冠",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 95,
+    "en": "Deepwood_Memories",
+    "ch": "深林的记忆",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 96,
+    "en": "Liyue_Harbor_Wharf",
+    "ch": "璃月港口",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 97,
+    "en": "Knights_of_Favonius_Library",
+    "ch": "骑士团图书馆",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 98,
+    "en": "Jade_Chamber",
+    "ch": "群玉阁",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 99,
+    "en": "Dawn_Winery",
+    "ch": "晨曦酒庄",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 100,
+    "en": "Wangshu_Inn",
+    "ch": "望舒客栈",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 101,
+    "en": "Favonius_Cathedral",
+    "ch": "西风大教堂",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 102,
+    "en": "Tenshukaku",
+    "ch": "天守阁",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 103,
+    "en": "Grand_Narukami_Shrine",
+    "ch": "鸣神大社",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 104,
+    "en": "Sangonomiya_Shrine",
+    "ch": "珊瑚宫",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 105,
+    "en": "Sumeru_City",
+    "ch": "须弥城",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 106,
+    "en": "Vanarana",
+    "ch": "桓那兰那",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 107,
+    "en": "Chinju_Forest",
+    "ch": "镇守之森",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 108,
+    "en": "Paimon",
+    "ch": "派蒙",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 109,
+    "en": "Katheryne",
+    "ch": "凯瑟琳",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 110,
+    "en": "Timaeus",
+    "ch": "蒂玛乌斯",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 111,
+    "en": "Wagner",
+    "ch": "瓦格纳",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 112,
+    "en": "Chef_Mao",
+    "ch": "卯师傅",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 113,
+    "en": "Tubby",
+    "ch": "阿圆",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 114,
+    "en": "Timmie",
+    "ch": "提米",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 115,
+    "en": "Liben",
+    "ch": "立本",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 116,
+    "en": "Chang_the_Ninth",
+    "ch": "常九爷",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 117,
+    "en": "Ellin",
+    "ch": "艾琳",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 118,
+    "en": "Iron_Tongue_Tian",
+    "ch": "田铁嘴",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 119,
+    "en": "Liu_Su",
+    "ch": "刘苏",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 120,
+    "en": "Hanachirusato",
+    "ch": "花散里",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 121,
+    "en": "Kid_Kujirai",
+    "ch": "鲸井小弟",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 122,
+    "en": "Xudong",
+    "ch": "旭东",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 123,
+    "en": "Dunyarzad",
+    "ch": "迪娜泽黛",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 124,
+    "en": "Rana",
+    "ch": "拉娜",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 125,
+    "en": "Parametric_Transformer",
+    "ch": "参量质变仪",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 126,
+    "en": "NRE",
+    "ch": "便携营养袋",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 127,
+    "en": "Red_Feather_Fan",
+    "ch": "红羽团扇",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 128,
+    "en": "Treasure_Seeking_Seelie",
+    "ch": "寻宝仙灵",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 129,
+    "en": "Woven_Ice",
+    "ch": "元素共鸣：交织之冰",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 130,
+    "en": "Shattering_Ice",
+    "ch": "元素共鸣：粉碎之冰",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 131,
+    "en": "Woven_Water",
+    "ch": "元素共鸣：交织之水",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 132,
+    "en": "Smoothing_Water",
+    "ch": "元素共鸣：愈疗之水",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 133,
+    "en": "Woven_Flames",
+    "ch": "元素共鸣：交织之火",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 134,
+    "en": "Fervent_Flames",
+    "ch": "元素共鸣：热诚之火",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 135,
+    "en": "Woven_Thunder",
+    "ch": "元素共鸣：交织之雷",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 136,
+    "en": "Deepwood_Memories",
+    "ch": "深林的记忆",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 137,
+    "en": "High_Voltage",
+    "ch": "元素共鸣：强能之雷",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 138,
+    "en": "Woven_Winds",
+    "ch": "元素共鸣：交织之风",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 139,
+    "en": "Impetuous_Winds",
+    "ch": "元素共鸣：迅捷之风",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 140,
+    "en": "Woven_Stone",
+    "ch": "元素共鸣：交织之岩",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 141,
+    "en": "Enduring_Rock",
+    "ch": "元素共鸣：坚定之岩",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 142,
+    "en": "Woven_Weeds",
+    "ch": "元素共鸣：交织之草",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 143,
+    "en": "Sprawling_Greenery",
+    "ch": "元素共鸣：蔓生之草",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 144,
+    "en": "Wind_and_Freedom",
+    "ch": "风与自由",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 145,
+    "en": "Stone_and_Contracts",
+    "ch": "岩与契约",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 146,
+    "en": "Thunder_and_Eternity",
+    "ch": "雷与永恒",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 147,
+    "en": "Nature_and_Wisdom",
+    "ch": "草与智慧",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 148,
+    "en": "The_Best_Travel_Companion",
+    "ch": "最好的伙伴！",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 149,
+    "en": "Changing_Shifts",
+    "ch": "换班时间",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 150,
+    "en": "Toss_Up",
+    "ch": "一掷乾坤",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 151,
+    "en": "Strategize",
+    "ch": "运筹帷幄",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 152,
+    "en": "I_Havent_Lost_Yet",
+    "ch": "本大爷还没有输！",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 153,
+    "en": "Leave_it_to_Me",
+    "ch": "交给我吧！",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 154,
+    "en": "When_the_Crane_Returned",
+    "ch": "鹤归之时",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 155,
+    "en": "Starsigns",
+    "ch": "星天之兆",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 156,
+    "en": "Calxs_Arts",
+    "ch": "白垩之术",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 157,
+    "en": "Master_of_Weaponry",
+    "ch": "诸武精通",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 158,
+    "en": "Blessing_of_the_Divine_Relics_Installation",
+    "ch": "神宝迁宫祝词",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 159,
+    "en": "Quick_Knit",
+    "ch": "快快缝补术",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 160,
+    "en": "Send_Off",
+    "ch": "送你一程",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 161,
+    "en": "Guardians_Oath",
+    "ch": "护法之誓",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 162,
+    "en": "Abyssal_Summons",
+    "ch": "深渊的呼唤",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 163,
+    "en": "Fatui_Conspiracy",
+    "ch": "愚人众的阴谋",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 164,
+    "en": "Plunging_Strike",
+    "ch": "下落斩",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 165,
+    "en": "Heavy_Strike",
+    "ch": "重攻击",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 166,
+    "en": "The_Legend_of_Vennessa",
+    "ch": "温妮莎传奇",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 167,
+    "en": "Friendship_Eternal",
+    "ch": "永远的友谊",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 168,
+    "en": "Jueyun_Guoba",
+    "ch": "绝云锅巴",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 169,
+    "en": "Adeptus_Temptation",
+    "ch": "仙跳墙",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 170,
+    "en": "Lotus_Flower_Crisp",
+    "ch": "莲花酥",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 171,
+    "en": "Northern_Smoked_Chicken",
+    "ch": "北地烟熏鸡",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 172,
+    "en": "Sweet_Madame",
+    "ch": "甜甜花酿鸡",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 173,
+    "en": "Mondstadt_Hash_Brown",
+    "ch": "蒙德土豆饼",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 174,
+    "en": "Mushroom_Pizza",
+    "ch": "烤蘑菇披萨",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 175,
+    "en": "Minty_Meat_Rolls",
+    "ch": "兽肉薄荷卷",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 176,
+    "en": "Teyvat_Fried_Egg",
+    "ch": "提瓦特煎蛋",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 177,
+    "en": "Sashimi_Platter",
+    "ch": "刺身拼盘",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 178,
+    "en": "Tandoori_Roast_Chicken",
+    "ch": "唐杜尔烤鸡",
+    "full_img": "",
+    "show_img": ""
+  },
+  {
+    "id": 179,
+    "en": "Butter_Crab",
+    "ch": "黄油蟹蟹",
+    "full_img": "",
+    "show_img": ""
+  }
+]

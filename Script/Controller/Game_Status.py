@@ -18,7 +18,6 @@ class Game_Status:
         self.image_recognize = Image_Recognize()
         self.card_factory = Card_Factory()
         self.card_factory.read_card()
-        self.card_list = []
         self.enemy_card = []
         self.my_card = []
         self.enemy_card_loc = (175, 175 + 376, 1190, 1190 + 216)
@@ -26,17 +25,13 @@ class Game_Status:
         self.my_card_loc = ()
         self.enemy_card_img = None
         self.my_card_img = None
-        for folder in self.graphic_folder:
-            folder_path = os.path.join(self.graphic_root, folder)
-            for file in os.listdir(folder_path):
-                self.card_list.append(os.path.join(folder_path, file))
 
     def add_card_deck(self):
         self.game_screen.get_game_screenshot()
         self.game_screen.resize_screen_deck()
         card_deck = {}
         card_location = {}
-        for card in self.card_list:
+        for card in self.card_factory.cards_by_id():
             ret = self.image_recognize.check_card(self.game_screen.image, card, [150, 90], 0.5)
             if ret:
                 num = self.image_recognize.recognize_numbers_in_rect(self.game_screen.image, ret)
@@ -60,18 +55,13 @@ class Game_Status:
             self.game_screen.get_game_screenshot()
             self.game_screen.resize_screen_gaming()
             current_frame = self.game_screen.image.copy()
-            # current_frame = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
             current_frame = current_frame[card_loc[0]:card_loc[1], card_loc[2]:card_loc[3]]
             # 检测画面是否发生较大的变化
             diff_sum = self.image_recognize.detect_change(previous_frame, current_frame, threshold=1000000)
             if diff_sum is not False:
                 cards_img.append(current_frame)
                 diff_sums.append(diff_sum)
-                for card in self.card_list:
-                    ret = self.game_screen.image_recognize.check_card(current_frame, card, 0.9)
-                    if ret:
-                        card_list.append(card)
-                        break
+                ret = self.game_screen.image_recognize.check_card(current_frame, self.card_factory.cards_by_id())
             if len(cards_img) > 100:
                 break
             previous_frame = current_frame
