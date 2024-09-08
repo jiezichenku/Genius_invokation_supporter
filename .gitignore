@@ -1,4 +1,6 @@
-.git/
-.idea/
-Graphic/
-venv/
+.git
+.idea
+Graphic
+venv
+*.h5
+*.pth
