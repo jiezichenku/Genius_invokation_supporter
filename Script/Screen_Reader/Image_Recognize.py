@@ -55,9 +55,6 @@ class Image_Recognize:
             card_image = cv2.imread(card.full_img)
             card_image = self.to_single_channel(card_image)
             # 调整卡牌大小
-            # card_height = card_image.shape[0]
-            # card_width = card_height / size[0] * size[1]
-            # cut_image = card_image[0:int(card_height), 0:int(card_width)]
             resized_image = self.resize(card_image, (size[1], size[0]))
             if compare_size:
                 resized_image = self.clip(resized_image, compare_size[0], compare_size[1], compare_size[2], compare_size[3])

@@ -22,6 +22,12 @@ class Card_Factory:
                 return card
         return None
 
+    def get_card_by_tag(self, tag):
+        for card in self.cards_by_id:
+            if card.tag == tag:
+                return card
+        return None
+
     def read_card(self):
         with open(Card_Info_Json, encoding='utf-8') as file:
             data = json.load(file)
@@ -30,7 +36,8 @@ class Card_Factory:
                             card_info["en"],
                             card_info["ch"],
                             card_info["full_img"],
-                            card_info["show_img"])
+                            card_info["show_img"],
+                            card_info["tag"])
                 self.cards_by_id.append(card)
 
         with open(Card_Usage_Json, encoding='utf-8') as file:
